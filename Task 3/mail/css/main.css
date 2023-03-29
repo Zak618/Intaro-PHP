@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+*, *:before, *:after{
+  box-sizing: border-box;
+  webkit-box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
+a{
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 14px;
+  line-height: 1.5rem;
+  margin: 0;
+  background: #fff;
+}
+
+.default{
+  padding: 80px;
+}
+
+/*Оформление блока*/
+.contacts {
+  display: flex;
+}
+
+.contacts-bg{
+  background: url(../img/contacts-bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.contacts__forms {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.contacts__title{
+  color: #333;
+  font-size: 30px;
+  letter-spacing: 0.05em;
+  line-height: 47px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.contacts__btn{
+  background: #005bea;
+  border: 1px solid #005bea;
+  color: #fff;
+  padding: 17px 60px;
+  font-size: 13px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 6px 27px rgba(0,91,234,0.3);
+  -ms-box-shadow: 0 6px 27px rgba(0,91,234,0.3);
+  -moz-box-shadow: 0 6px 27px rgba(0,91,234,0.3);
+  box-shadow: 0 6px 27px rgba(0,91,234,0.3);
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.contacts__btn:hover{
+  color: #005bea;
+  background: transparent;
+}
+
+
+/*Оформление формы*/
+.contacts__form-content{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.contacts__form-label{
+  font-size: 14px;
+  color: #09090d;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.contacts__form-input{
+  z-index: 10;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.3);
+  font-size: 16px;
+  background: 0 0;
+  -webkit-appearance: none;
+  outline: 0;
+  padding: 15px 0;
+  width: 100%;
+  color: rgba(58,65,60,.75);
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+
+textarea.contacts__form-input{
+  padding: 10px;
+  height: 130px;
+  resize: none;
+  border: 1px solid rgba(0,0,0,.3);
+}
+
+
+/*Сообщение об отправке*/
+.contacts__massage {
+  display: none;
+  align-items: center;
+  border: solid 1px #ddd;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contacts__massage.active ~ * {
+  opacity: 1;
+  filter: blur(20px); 
+}
+
+.contacts__massage img{
+  width: 90px;
+}
+
+.contacts__info{
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+.contacts__info-text{
+  font-size: 14px;
+  color: #000000; 
+  margin-bottom: 0;
+}
+
+/*Адаптивность======================*/
+@media (max-width: 1050px) {
+  .contacts__forms{
+    width: 100%;
+  }
+  .contacts-bg{
+    background: none;
+  }
+}
+
+@media (max-width: 990px) {
+  .default{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+}
+
+@media (max-width: 770px) {
+  .contacts__title{
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .default{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .contacts__forms{
+    padding: 15px;
+  }
+
+}
