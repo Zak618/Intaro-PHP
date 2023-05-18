@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Список прочитанных книг</h1>
+
+    {% for book in books %}
+        <div class="border-2 border border-success rounded-3 m-3 d-flex flex-column">
+            <div class="justify-content-between flex-row d-flex mb-2 p-1">
+                <a class="text-decoration-none text-reset text-muted" href="{{ path("app_book", {id:book.id}) }}">Название: {{ book.name }}</a>
+                <div class="text-wrap">Дата прочтения: {{ book.date|date("Y-m-d") }}</div>
+            </div>
+            <div class="justify-content-between flex-row d-flex p-1">
+                {% if app.user != null %}
+                    {% if app.user == book.reader %}
+                <a href="{{ path("edit", {id: book.id}) }}"><div class="btn btn-secondary">Редактировать</div></a>
+                <a href="{{ path("delete", {id: book.id}) }}"><div class="btn btn-danger">Удалить</div></a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

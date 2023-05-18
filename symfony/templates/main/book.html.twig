@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <div class="p-5 mb-4 bg-light rounded-3 flex-row d-flex">
+        <div class="py-5 col-8">
+            <h1 class="display-5 fw-bold">{{book.name|e}}</h1>
+            <h6 class="display-9 fw-bold">Дата прочтения - {{ book.date|date("Y-m-d") }}</h6>
+            <h6 class="display-9 fw-bold">Автор - {{ book.author|e }}</h6>
+            <a href="{{ path("download", {id: book.id }) }}"><div class="btn btn-success">Скачать файл с книгой</div></a>
+
+        </div>
+        <div class="py-5 col-4">
+            <img src="../../public/covers/{{ book.cover|e }}" width="400" class="user-img mr-2" alt="Нет фото">
+        </div>
+    </div>
+{% endblock %}

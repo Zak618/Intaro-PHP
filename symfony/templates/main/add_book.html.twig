@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="container">
+            {{ form_start(bookForm) }}
+
+                {{ form_row(bookForm.name) }}
+                {{ form_row(bookForm.author) }}
+                {{ form_row(bookForm.cover) }}
+                {{ form_row(bookForm.file) }}
+            <div class="form-group">
+                <label for="inputDate">Введите дату:</label>
+                <input type="date" id="inputDate" name="date" class="form-control" required="required"
+                        {% if date != null %}
+                            value="{{ date|date('Y-m-d') }}"
+                        {% endif %}>
+            </div>
+            <div>
+                <input type="submit" id="submitData" class="btn btn-success mt-3" required="required">
+            </div>
+
+
+            {{ form_end(bookForm) }}
+        </div>
+    </div>
+{% endblock %}
